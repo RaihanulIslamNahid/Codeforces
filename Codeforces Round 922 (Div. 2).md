@@ -67,6 +67,7 @@ for tests in range(t):
 
 C - XOR-distance
 ```
+# PyPy3-64
 import sys
 input = sys.stdin.readline
 
@@ -114,6 +115,7 @@ for tests in range(t):
 
 D - Blocking Elements
 ```
+# PyPy3-64
 import sys
 input = sys.stdin.readline
 
@@ -202,5 +204,181 @@ for tests in range(t):
 E - ace5 and Task Order
 
 ```
+# Python 3
+import sys
+input = sys.stdin.readline
 
+def query(i):
+    print("? "+str(i)+"\n",flush=True)
+    return input().strip()
+
+def big(L,ind):
+    while True:
+        x=query(ind)
+
+        if x=="=":
+            break
+
+    LEN=len(L)
+
+    plus=0
+
+    for b in L:
+        while plus!=LEN//2:
+            x=query(b)
+
+            if x==">":
+                plus+=1
+                continue
+
+            if x=="=":
+                break
+            if x=="<":
+                plus-=1
+                break
+
+        if plus==LEN//2:
+            last=b
+            break
+
+    for b in L:
+        x=query(b)
+        if x=="=":
+            center=b
+            break
+
+        if x==">":
+            query(ind)
+        else:
+            query(last)
+
+    BIG=[]
+    SMALL=[]
+
+    for b in L:
+        if center==b:
+            continue
+        x=query(b)
+
+        if x==">":
+            BIG.append(b)
+            query(center)
+        else:
+            SMALL.append(b)
+            query(center)
+
+    return BIG,SMALL,center
+
+def small(L,ind):
+    while True:
+        x=query(ind)
+
+        if x=="=":
+            break
+
+    LEN=len(L)
+
+    plus=0
+
+    for b in L:
+        while plus!=LEN//2:
+            x=query(b)
+
+            if x=="<":
+                plus+=1
+                continue
+
+            if x=="=":
+                break
+            
+            if x==">":
+                plus-=1
+                break
+
+        if plus==LEN//2:
+            last=b
+            break
+
+    for b in L:
+        x=query(b)
+        if x=="=":
+            center=b
+            break
+
+        if x=="<":
+            query(ind)
+        else:
+            query(last)
+
+    BIG=[]
+    SMALL=[]
+
+    for b in L:
+        if center==b:
+            continue
+        x=query(b)
+
+        if x==">":
+            BIG.append(b)
+            query(center)
+        else:
+            SMALL.append(b)
+            query(center)
+
+    return BIG,SMALL,center
+
+    
+t=int(input())
+for tests in range(t):
+    n=int(input())
+
+    while True:
+        x=query(1)
+
+        if x=="=":
+            break
+
+    BIG=[]
+    SMALL=[]
+
+    for i in range(2,n+1):
+        x=query(i)
+
+        if x==">":
+            BIG.append(i)
+            query(1)
+        else:
+            SMALL.append(i)
+            query(1)
+
+    X=[[SMALL,-1],[[1],1],[BIG,1]]
+
+    ANS=[]
+
+    while X:
+        L,ind=X.pop()
+
+        if len(L)==0:
+            continue
+
+        if len(L)==1:
+            ANS.append(L[0])
+            continue
+
+        if ind<0:
+            BIG,SMALL,center=small(L,-ind)
+        else:
+            BIG,SMALL,center=big(L,ind)
+
+        X.append([SMALL,center*(-1)])
+        X.append([[center],center])
+        X.append([BIG,center])
+
+    ANS.reverse()
+    LANS=[-1]*n
+
+    for i in range(n):
+        LANS[ANS[i]-1]=i+1
+
+    print("!",*LANS,flush=True)
 ```
