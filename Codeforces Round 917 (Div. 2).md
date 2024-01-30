@@ -41,7 +41,7 @@ int main(){
 
 Problem B:
 
-[B - Erase First or Second Letter](https://codeforces.com/contest/1917/problem/B)https://codeforces.com/contest/1917/problem/B)
+[B - Erase First or Second Letter](https://codeforces.com/contest/1917/problem/B)
 
 Editorial : Try to consider the first occurrence for each letter.
 
