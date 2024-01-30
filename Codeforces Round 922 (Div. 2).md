@@ -2,15 +2,15 @@
 
 I'm sad that the E I worked so hard to write turned out to be TLE.
 
-A. -1 if m=1
+Problem A - Use 1 * 2 horizontal tiles to cover as many rows as possible. If one cell remains in the end, extend the last tile to make it 1 * 3. Hence vertical tiles are never required.
 
-B. Sorted one side (unproven)
+Problem B - Normally we would use [position of the element in sorted array]. Use here [position in sorted A + position in sorted B] to get the final sorted combination array. [Try proving it by looking at the number of inversions added by any index].
 
-C. Decide whether to do a > b or a < b and be greedy
+Problem C - Only the bits which are set in one and not in other matters. Without loss of generality, let's a < b. Try setting as many bits (less than the highest one) in 'a' as possible to make the difference less. The only other option is to flip the highest bit, now a > b. Try setting in 'b' now in a similar way.
 
-D. Binary search and seg tree DP for decision problem
+Problem D - Binary search for the answer. Suppose we want to check if X is a possible answer. We can use dynamic programming to find what's the minimum sum of blocked elements we can get when we have to split subarrays with <= X. If this dp tells us that we can get blocked elements with a sum less than X, then this is possible. Look at my code for implementation details.
 
-E. First, decide on A[1], then divide it into half. I don't know the number of queries, but I expected there to be plenty of room.
+Problem E - This was a beauty. Hint for one possible solution - Randomized Quick Sort.
 
 Code:
 
