@@ -2,7 +2,8 @@
 
 | Contest Name | Date | Contest Link | Code Link |
 |--------------|------|--------------|-----------|
-| Codeforces Round 957 (Div. 3) | Jul/11/2024 | [Link](https://codeforces.com/contest/1992) | [Link]() |
+| Codeforces Round (Div. 2)  | Jul/15/2024 | [Link]() | [Link]() |
+| Codeforces Round 957 (Div. 3) | Jul/11/2024 | [Link](https://codeforces.com/contest/1992) | [Link](https://github.com/RaihanulIslamNahid/Codeforces/tree/main/Codeforces%20Round%20957%20(Div.%203)) |
 | Codeforces Round #956 (Div. 2) and ByteRace 2024 | Jul/07/2024 | [Link](https://codeforces.com/contest/1983) | [Link](https://github.com/RaihanulIslamNahid/Codeforces/tree/main/Codeforces%20Round%20%23956%20(Div.%202)%20and%20ByteRace%202024) |
 | Codeforces Round 955 (Div. 2, with prizes from NEAR!) | Jun/25/2024 | [Link](https://codeforces.com/contest/1982) | [Link](https://github.com/RaihanulIslamNahid/Codeforces/tree/main/Codeforces%20Round%20955%20(Div.%202%2C%20with%20prizes%20from%20NEAR!)) |
 | Codeforces Round 954 (Div. 3) | Jun/23/2024 | [Link](https://codeforces.com/contest/1986) | [Link](https://github.com/RaihanulIslamNahid/Codeforces/tree/main/Codeforces%20Round%20954%20(Div.%203)) |
